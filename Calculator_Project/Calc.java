@@ -12,7 +12,9 @@ public class Calc
    
 
 public static void main(String[] args) {
+String userStringEquation = getEquation();
 
+formatEquation(userStringEquation);
     
    
 } 
@@ -29,21 +31,33 @@ public static String getEquation(){
 
 public static void formatEquation(String equation){
 if(equation.contains("+")){
-numbers = equation.split("+");
+numbers = equation.split("\\+");
 operator = "+";
+int answer = Integer.valueOf(numbers[0]) + Integer.valueOf(numbers[1]);
+System.out.println(answer);
 }
+
 else if(equation.contains("-")){
 numbers = equation.split("-");
 operator = "-";
+int answer = Integer.valueOf(numbers[0]) - Integer.valueOf(numbers[1]);
+System.out.println(answer);
 }
+
 else if(equation.contains("*")){
-numbers = equation.split("*");
+numbers = equation.split("\\*");
 operator = "*";
+int answer = Integer.valueOf(numbers[0]) * Integer.valueOf(numbers[1]);
+System.out.println(answer);
 }
+
 else if(equation.contains("/")){
 numbers = equation.split("/");
 operator = "/";
+int answer = Integer.valueOf(numbers[0]) / Integer.valueOf(numbers[1]);
+System.out.println(answer);
 }
+
 else{
     System.out.println("Invalid operator");
 }
